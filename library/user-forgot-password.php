@@ -36,12 +36,14 @@ echo "<script>alert('Email id or Mobile no is invalid');</script>";
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Online Library Management System | Password Recovery </title>
+    <!-- SITE ICON -->
+    <link href="assets/img/site_icon.png" rel="icon" />
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/user_style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
      <script type="text/javascript">
@@ -65,17 +67,17 @@ return true;
 <div class="content-wrapper">
 <div class="container">
 <div class="row pad-botm">
-<div class="col-md-12">
-<h4 class="header-line">User Password Recovery</h4>
+<div class="col-md-12 col-sm-12 col-xs-12">
+<h4 class="header-line">USER PASSWORD RECOVERY</h4>
 </div>
 </div>
              
 <!--LOGIN PANEL START-->           
 <div class="row">
-<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3" >
+<div class="col-md-6 col-sm-8 col-xs-10" >
 <div class="panel panel-info">
 <div class="panel-heading">
- LOGIN FORM
+ RECOVERY FORM
 </div>
 <div class="panel-body">
 <form role="form" name="chngpwd" method="post" onSubmit="return valid();">
@@ -96,12 +98,12 @@ return true;
 </div>
 
 <div class="form-group">
-<label>ConfirmPassword</label>
+<label>Confirm Password</label>
 <input class="form-control" type="password" name="confirmpassword" required autocomplete="off"  />
 </div>
 
 
- <button type="submit" name="change" class="btn btn-info">Chnage Password</button> | <a href="index.php">Login</a>
+ <button type="submit" name="change" class="btn btn-info">Change Password</button> | <a href="index.php">Login</a>
 </form>
  </div>
 </div>
@@ -119,7 +121,7 @@ return true;
     <!-- BOOTSTRAP SCRIPTS  -->
     <script src="assets/js/bootstrap.js"></script>
       <!-- CUSTOM SCRIPTS  -->
-    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/user_custom.js"></script>
 
 </body>
 </html>

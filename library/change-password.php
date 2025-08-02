@@ -40,13 +40,15 @@ $error="Your current password is wrong";
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System | </title>
+    <title>Online Library Management System | Change Password</title>
+    <!-- SITE ICON -->
+    <link href="assets/img/site_icon.png" rel="icon" />
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/user_style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
   <style>
@@ -88,7 +90,7 @@ return true;
 <div class="content-wrapper">
 <div class="container">
 <div class="row pad-botm">
-<div class="col-md-12">
+<div class="col-md-12 col-sm-12 col-xs-12">
 <h4 class="header-line">User Change Password</h4>
 </div>
 </div>
@@ -96,7 +98,7 @@ return true;
         else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>            
 <!--LOGIN PANEL START-->           
 <div class="row">
-<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3" >
+<div class="col-md-6 col-sm-8 col-xs-10" >
 <div class="panel panel-info">
 <div class="panel-heading">
 Change Password
@@ -137,7 +139,7 @@ Change Password
     <!-- BOOTSTRAP SCRIPTS  -->
     <script src="assets/js/bootstrap.js"></script>
       <!-- CUSTOM SCRIPTS  -->
-    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/user_custom.js"></script>
 </body>
 </html>
 <?php } ?>

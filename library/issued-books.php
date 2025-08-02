@@ -2,15 +2,12 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
-if(strlen($_SESSION['login'])==0)
-    {   
+if(strlen($_SESSION['login'])==0) {   
 header('location:index.php');
 }
 else{ 
+?>
 
-
-
-    ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -18,7 +15,9 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System |  Issued Books</title>
+    <title>Online Library Management System | Issued Books</title>
+    <!-- SITE ICON -->
+    <link href="assets/img/site_icon.png" rel="icon" />
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -26,7 +25,7 @@ else{
     <!-- DATATABLE STYLE  -->
     <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/user_style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
@@ -38,17 +37,17 @@ else{
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
-            <div class="col-md-12">
-                <h4 class="header-line">Manage Issued Books</h4>
-    </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h4 class="header-line">Issued Books</h4>
+            </div>
+        </div>
     
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                          Issued Books 
+                        <div class="panel-heading"> 
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -83,7 +82,7 @@ foreach($results as $result)
                                             <td class="center"><?php echo htmlentities($result->IssuesDate);?></td>
                                             <td class="center"><?php if($result->ReturnDate=="")
                                             {?>
-                                            <span style="color:red">
+                                            <span style="color: var(--danger-color)">
                                              <?php   echo htmlentities("Not Return Yet"); ?>
                                                 </span>
                                             <?php } else {
@@ -122,7 +121,7 @@ foreach($results as $result)
     <script src="assets/js/dataTables/jquery.dataTables.js"></script>
     <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
       <!-- CUSTOM SCRIPTS  -->
-    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/user_custom.js"></script>
 
 </body>
 </html>

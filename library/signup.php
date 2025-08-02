@@ -1,41 +1,36 @@
-<?php 
+<?php
 session_start();
-include('includes/config.php');
+include ('includes/config.php');
 error_reporting(0);
-if(isset($_POST['signup']))
-{
- 
-//Code for student ID
-$count_my_page = ("studentid.txt");
-$hits = file($count_my_page);
-$hits[0] ++;
-$fp = fopen($count_my_page , "w");
-fputs($fp , "$hits[0]");
-fclose($fp); 
-$StudentId= $hits[0];   
-$fname=$_POST['fullanme'];
-$mobileno=$_POST['mobileno'];
-$email=$_POST['email']; 
-$password=md5($_POST['password']); 
-$status=1;
-$sql="INSERT INTO  tblstudents(StudentId,FullName,MobileNumber,EmailId,Password,Status) VALUES(:StudentId,:fname,:mobileno,:email,:password,:status)";
-$query = $dbh->prepare($sql);
-$query->bindParam(':StudentId',$StudentId,PDO::PARAM_STR);
-$query->bindParam(':fname',$fname,PDO::PARAM_STR);
-$query->bindParam(':mobileno',$mobileno,PDO::PARAM_STR);
-$query->bindParam(':email',$email,PDO::PARAM_STR);
-$query->bindParam(':password',$password,PDO::PARAM_STR);
-$query->bindParam(':status',$status,PDO::PARAM_STR);
-$query->execute();
-$lastInsertId = $dbh->lastInsertId();
-if($lastInsertId)
-{
-echo '<script>alert("Your Registration successfull and your student id is  "+"'.$StudentId.'")</script>';
-}
-else 
-{
-echo "<script>alert('Something went wrong. Please try again');</script>";
-}
+if (isset($_POST['signup'])) {
+    // Code for student ID
+    $count_my_page = ('studentid.txt');
+    $hits = file($count_my_page);
+    $hits[0]++;
+    $fp = fopen($count_my_page, 'w');
+    fputs($fp, "$hits[0]");
+    fclose($fp);
+    $StudentId = $hits[0];
+    $fname = $_POST['fullanme'];
+    $mobileno = $_POST['mobileno'];
+    $email = $_POST['email'];
+    $password = md5($_POST['password']);
+    $status = 1;
+    $sql = 'INSERT INTO  tblstudents(StudentId,FullName,MobileNumber,EmailId,Password,Status) VALUES(:StudentId,:fname,:mobileno,:email,:password,:status)';
+    $query = $dbh->prepare($sql);
+    $query->bindParam(':StudentId', $StudentId, PDO::PARAM_STR);
+    $query->bindParam(':fname', $fname, PDO::PARAM_STR);
+    $query->bindParam(':mobileno', $mobileno, PDO::PARAM_STR);
+    $query->bindParam(':email', $email, PDO::PARAM_STR);
+    $query->bindParam(':password', $password, PDO::PARAM_STR);
+    $query->bindParam(':status', $status, PDO::PARAM_STR);
+    $query->execute();
+    $lastInsertId = $dbh->lastInsertId();
+    if ($lastInsertId) {
+        echo '<script>alert("Your Registration successfull and your student id is  "+"' . $StudentId . '")</script>';
+    } else {
+        echo "<script>alert('Something went wrong. Please try again');</script>";
+    }
 }
 
 ?>
@@ -47,16 +42,15 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
     <title>Online Library Management System | Student Signup</title>
+    <!-- SITE ICON -->
+    <link href="assets/img/site_icon.png" rel="icon" />
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/user_style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 <script type="text/javascript">
@@ -90,23 +84,21 @@ error:function (){}
 </head>
 <body>
     <!------MENU SECTION START-->
-<?php include('includes/header.php');?>
+<?php include ('includes/header.php'); ?>
 <!-- MENU SECTION END-->
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
-            <div class="col-md-12">
-                <h4 class="header-line">User Signup</h4>
-                
-                            </div>
-
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h4 class="header-line">USER SIGNUP</h4>
+            </div>
         </div>
              <div class="row">
            
-<div class="col-md-9 col-md-offset-1">
+<div class="col-md-8 col-sm-9 col-xs-10">
                <div class="panel panel-danger">
                         <div class="panel-heading">
-                           SINGUP FORM
+                           SIGN-UP FORM
                         </div>
                         <div class="panel-body">
                             <form name="signup" method="post" onSubmit="return valid();">
@@ -137,7 +129,7 @@ error:function (){}
 <input class="form-control"  type="password" name="confirmpassword" autocomplete="off" required  />
 </div>
                              
-<button type="submit" name="signup" class="btn btn-danger" id="submit">Register Now </button>
+<button type="submit" name="signup" class="btn btn-primary" id="submit">Register Now </button>
 
                                     </form>
                             </div>
@@ -147,11 +139,11 @@ error:function (){}
     </div>
     </div>
      <!-- CONTENT-WRAPPER SECTION END-->
-    <?php include('includes/footer.php');?>
+    <?php include ('includes/footer.php'); ?>
     <script src="assets/js/jquery-1.10.2.js"></script>
     <!-- BOOTSTRAP SCRIPTS  -->
     <script src="assets/js/bootstrap.js"></script>
       <!-- CUSTOM SCRIPTS  -->
-    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/user_custom.js"></script>
 </body>
 </html>
