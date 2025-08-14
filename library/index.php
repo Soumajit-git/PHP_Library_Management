@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-include ('includes/config.php');
+include('includes/config.php');
 if ($_SESSION['login'] != '') {
     $_SESSION['login'] = '';
 }
@@ -33,6 +33,7 @@ if (isset($_POST['login'])) {
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -51,84 +52,85 @@ if (isset($_POST['login'])) {
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
 </head>
+
 <body data-theme="light">
     <!------MENU SECTION START-->
-    <?php include ('includes/header.php'); ?>
+    <?php include('includes/header.php'); ?>
 
-<!-- MENU SECTION END-->
-<div class="content-wrapper">
-    <div class="container">
+    <!-- MENU SECTION END-->
+    <div class="content-wrapper">
+        <div class="container">
             <!--Slider---->
-        <div id="carousel" class="row">
-            <div class="col-md-8 col-sm-8 col-xs-10">
-                <div id="carousel-example" class="carousel slide slide-bdr" data-ride="carousel" >
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img src="assets/img/1.jpg" alt="" />
+            <div id="carousel" class="row">
+                <div class="col-md-8 col-sm-8 col-xs-10">
+                    <div id="carousel-example" class="carousel slide slide-bdr" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="assets/img/1.jpg" alt="" />
+                            </div>
+                            <div class="item">
+                                <img src="assets/img/2.jpg" alt="" />
+                            </div>
+                            <div class="item">
+                                <img src="assets/img/3.jpg" alt="" />
+                            </div>
                         </div>
-                        <div class="item">
-                            <img src="assets/img/2.jpg" alt="" />
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/3.jpg" alt="" /> 
-                        </div>
-                    </div>
-                    <!--INDICATORS-->
-                     <ol class="carousel-indicators">
-                        <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example" data-slide-to="1"></li>
-                        <li data-target="#carousel-example" data-slide-to="2"></li>
-                    </ol>
-                    <!--PREVIUS-NEXT BUTTONS-->
-                    <a class="left carousel-control" href="#carousel-example" data-slide="prev">
-                     <span class="glyphicon glyphicon-chevron-left"></span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example" data-slide="next">
-                     <span class="glyphicon glyphicon-chevron-right"></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <br />
-        <hr />
-        <div class="row pad-botm">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-             <h4 class="header-line">USER LOGIN FORM</h4>
-            </div>
-        </div>
-        <a name="ulogin"></a>            
-        <!--LOGIN PANEL START-->           
-        <div class="row">
-            <div class="col-md-6 col-sm-8 col-xs-10" >
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                     LOGIN FORM
-                    </div>
-                    <div class="panel-body">
-                     <form role="form" method="post">
-                        <div class="form-group">
-                         <label>Enter Email id</label>
-                         <input class="form-control" type="text" name="emailid" required autocomplete="off" />
-                        </div>
-                        
-                        <div class="form-group">
-                         <label>Password</label>
-                         <input class="form-control" type="password" name="password" required autocomplete="off"  />
-                         <p class="help-block"><a href="user-forgot-password.php">Forgot Password</a></p>
-                        </div>
-                        
-                        <button type="submit" name="login" class="btn btn-info">LOGIN </button> | <a href="signup.php">Not Registered Yet? Signup.</strong></a>
-                     </form>
+                        <!--INDICATORS-->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example" data-slide-to="1"></li>
+                            <li data-target="#carousel-example" data-slide-to="2"></li>
+                        </ol>
+                        <!--PREVIUS-NEXT BUTTONS-->
+                        <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>  
-        <!---LOGIN PABNEL END-->            
+            <br />
+            <hr />
+            <div class="row pad-botm">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h4 class="header-line">USER LOGIN FORM</h4>
+                </div>
+            </div>
+            <a name="ulogin"></a>
+            <!--LOGIN PANEL START-->
+            <div class="row">
+                <div class="col-md-6 col-sm-8 col-xs-10">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            LOGIN FORM
+                        </div>
+                        <div class="panel-body">
+                            <form role="form" method="post">
+                                <div class="form-group">
+                                    <label>Enter Email id</label>
+                                    <input class="form-control" type="text" name="emailid" required autocomplete="off" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input class="form-control" type="password" name="password" required autocomplete="off" />
+                                    <p class="help-block"><a href="user-forgot-password.php">Forgot Password</a></p>
+                                </div>
+
+                                <button type="submit" name="login" class="btn btn-info">LOGIN </button> | <a href="signup.php">Not Registered Yet? Signup.</strong></a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---LOGIN PABNEL END-->
+        </div>
     </div>
-</div>
-    
+
     <!-- CONTENT-WRAPPER SECTION END-->
-    <?php include ('includes/footer.php'); ?>
+    <?php include('includes/footer.php'); ?>
     <!-- FOOTER SECTION END-->
     <script src="assets/js/jquery-1.10.2.js"></script>
     <!-- BOOTSTRAP SCRIPTS  -->
@@ -137,4 +139,5 @@ if (isset($_POST['login'])) {
     <script src="assets/js/user_custom.js"></script>
 
 </body>
+
 </html>
